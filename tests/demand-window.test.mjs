@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {recordedDemandRows} from '../dashboard/demand-window.mjs';
+const row=(date,time,demand,energy=10)=>({date,time,demand,energy,zero:false,ts:Date.parse(date+'T'+time+':00Z')});
+test('Thai current and future intervals are pending; completed demand retained',()=>{const r=recordedDemandRows([row('2026-10-27','11:00',4),row('2026-10-27','11:15',5),row('2026-10-27','11:30',0)],Date.parse('2026-10-27T04:35:00Z'));assert.deepEqual(r.map(x=>x.plotPending),[false,false,true]);});
+test('Latest unfinished zero is omitted without removing internal or historical zero',()=>{const r=recordedDemandRows([row('2026-10-26','23:45',0),row('2026-10-27','10:00',0),row('2026-10-27','10:15',4),row('2026-10-27','10:30',0)],Date.parse('2026-10-27T04:35:00Z'));assert.deepEqual(r.map(x=>x.plotPending),[false,false,false,true]);});

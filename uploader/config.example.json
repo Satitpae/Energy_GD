@@ -1,0 +1,8 @@
+{
+  "base_url": "https://granddigital-ems-tou.pages.dev",
+  "site": "main",
+  "folder": "../TOU File for test",
+  "upload_token": "REPLACE_WITH_UPLOAD_TOKEN",
+  "state_file": "state-main.json",
+  "interval_seconds": 60
+}

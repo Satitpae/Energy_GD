@@ -1,0 +1,16 @@
+node_modules/
+.cache/
+.wrangler/
+.env
+.env.*
+.dev.vars
+__pycache__/
+*.pyc
+.local/
+dist/
+uploader/config.local.json
+uploader/config.*.local.json
+uploader/state*.json
+uploader/logs/
+uploader/sender.lock
+uploader/sender.stop

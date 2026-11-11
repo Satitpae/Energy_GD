@@ -1,0 +1,8 @@
+{
+  "name": "ems-cloudflare-tools",
+  "private": true,
+  "description": "Local Cloudflare deployment tools for EMS TOU",
+  "devDependencies": {
+    "wrangler": "^4.152.0"
+  }
+}
